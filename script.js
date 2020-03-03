@@ -3,6 +3,7 @@ var photo = document.querySelector('.photo');
 
 for (var i = 0; i < controls.length; i++) {
   controls[i].innerHTML = controls[i].dataset.filter;
+  clickControl(controls[i]);
 }
 
 function toggleFilter(filterName) {
