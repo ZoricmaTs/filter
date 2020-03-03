@@ -1,11 +1,11 @@
-var filterName = 'filterName';
+var filterName = 'walden';
 
-var control = document.querySelector('selector');
+var control = document.querySelector('button.' + filterName);
 if (control) {
   control.classList.add('active');
 }
 
 var photo = document.querySelector('.photo');
 if (photo) {
-  photo.classList.add('class');
+  photo.classList.add(filterName);
 }
