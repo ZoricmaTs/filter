@@ -12,13 +12,10 @@ function toggleFilter(filterName) {
     photo.classList.remove(controls[j].dataset.filter);
   }
 
-  var control = document.querySelector('button.' + filterName);
-  if (control) {
     control.classList.add('active');
-  }
 
   if (photo) {
-    photo.classList.add(filterName);
+    photo.classList.add(control.dataset.filter);
   }
 }
 
@@ -27,3 +24,6 @@ function clickControl(control) {
         toggleFilter(control.dataset.filter);
     })
 }
+
+var defaultFilter = document.querySelector('button.toaster');
+toggleFilter(defaultFilter);
