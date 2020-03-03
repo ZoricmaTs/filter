@@ -1,3 +1,11 @@
+var original = document.querySelector('.photo-original');
+var separator = document.querySelector('.separator');
+
+if (original && separator) {
+  original.style.width = '75%';
+  separator.style.left = '75%';
+}
+
 var controls = document.querySelectorAll('.toggle-controls button');
 var photo = document.querySelector('.photo');
 
@@ -6,13 +14,13 @@ for (var i = 0; i < controls.length; i++) {
   clickControl(controls[i]);
 }
 
-function toggleFilter(filterName) {
+function toggleFilter(control) {
   for (var j = 0; j < controls.length; j++) {
     controls[j].classList.remove('active');
     photo.classList.remove(controls[j].dataset.filter);
   }
 
-    control.classList.add('active');
+  control.classList.add('active');
 
   if (photo) {
     photo.classList.add(control.dataset.filter);
@@ -20,10 +28,11 @@ function toggleFilter(filterName) {
 }
 
 function clickControl(control) {
-    control.addEventListener('click', function () {
-        toggleFilter(control.dataset.filter);
-    })
+  control.addEventListener('click', function () {
+    toggleFilter(control);
+  });
 }
 
 var defaultFilter = document.querySelector('button.toaster');
 toggleFilter(defaultFilter);
+
