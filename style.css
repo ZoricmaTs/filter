@@ -46,6 +46,9 @@
     user-select: none;
   }
 
+.toggle-controls .active {
+    box-shadow: 0 0 0 3px #fff;
+  }
 .walden {
     filter: contrast(0.9) brightness(1.2) hue-rotate(-20deg) saturate(1.7) sepia(0.4);
   }
