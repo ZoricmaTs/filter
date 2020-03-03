@@ -1,5 +1,6 @@
 var controls = document.querySelectorAll('.toggle-controls button');
 var photo = document.querySelector('.photo');
+
 for (var i = 0; i < controls.length; i++) {
   controls[i].innerHTML = controls[i].dataset.filter;
 }
@@ -15,14 +16,13 @@ function toggleFilter(filterName) {
     control.classList.add('active');
   }
 
-  
   if (photo) {
     photo.classList.add(filterName);
   }
 }
 
-
-
-toggleFilter('toaster');
-toggleFilter('walden');
-toggleFilter('kelvin');
+function clickControl(control) {
+    control.addEventListener('click', function () {
+        toggleFilter(control.dataset.filter);
+    })
+}
